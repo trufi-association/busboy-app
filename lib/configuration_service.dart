@@ -12,7 +12,6 @@ Configuration setupConfiguration() {
   // Urls
   final urls = UrlCollection(
     openTripPlannerUrl: "https://otp.busboy.app/otp/routers/default",
-    routeFeedbackUrl: "https://trufifeedback.z15.web.core.windows.net/route.html",
   );
 
   // Map
@@ -25,7 +24,7 @@ Configuration setupConfiguration() {
     onlineMaxZoom: 19.0,
     onlineZoom: 13.0,
     chooseLocationZoom: 16.0,
-    center:LatLng(5.82303, -73.03762),
+    center: LatLng(5.82303, -73.03762),
     southWest: LatLng(5.76259, -73.09),
     northEast: LatLng(5.86897, -72.98995),
   );
