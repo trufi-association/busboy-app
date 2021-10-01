@@ -22,7 +22,7 @@
     </intent>
   </queries>
    <application
-        android:label="busboy"
+        android:label="Busboyaca"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

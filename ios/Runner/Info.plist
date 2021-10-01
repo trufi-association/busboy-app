@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>busboy</string>
+	<string>Busboyaca</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -28,9 +28,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Busboy app is using your location to display it on a map.</string>
+	<string>Busboyaca app is using your location to display it on a map.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Busboy app is using your location to display it on a map.</string>
+	<string>Busboyaca app is using your location to display it on a map.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
