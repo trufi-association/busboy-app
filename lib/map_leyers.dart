@@ -43,8 +43,8 @@ Map<MapLayerIds, List<LayerOptions>> mapLayerOptions = {
   ],
 };
 Map<MapLayerIds, String> layerImage = {
-  MapLayerIds.streets: "assets/images/streets.png",
-  MapLayerIds.osm: "assets/images/osm-bright.png",
+  MapLayerIds.streets: "assets/images/streets.jpeg",
+  MapLayerIds.osm: "assets/images/osm-bright.jpeg",
 };
 
 class MapLayer extends MapTileProvider {
