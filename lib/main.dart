@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigator/custom_async_executor.dart';
 import 'package:trufi_core/base/blocs/map_configuration/map_configuration_cubit.dart';
 import 'package:trufi_core/base/blocs/map_tile_provider/map_tile_provider.dart';
 import 'package:trufi_core/base/utils/graphql_client/hive_init.dart';
@@ -22,7 +23,7 @@ void main() async {
             center: LatLng(5.82303, -73.03762),
           ),
           searchAssetPath: "assets/data/search.json",
-          photonUrl: "https://cbba.trufi.dev/photon",
+          photonUrl: "https://example/photonUrl",
           mapTileProviders: [
             OSMMapLayer(
               mapTilesUrl:
@@ -34,7 +35,7 @@ void main() async {
       trufiRouter: TrufiRouter(
         routerDelegate: DefaultValues.routerDelegate(
           appName: 'Busboy',
-          cityName: 'City',
+          cityName: 'Duitama',
           countryName: 'Colombia',
           backgroundImageBuilder: (_) {
             return Image.asset(
@@ -49,6 +50,7 @@ void main() async {
           urlSocialMedia: const UrlSocialMedia(
             urlFacebook: 'https://www.facebook.com/trufiapp/',
           ),
+          asyncExecutor: customAsyncExecutor,
         ),
       ),
     ),
