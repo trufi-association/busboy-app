@@ -1,4 +1,4 @@
-package app.busboy.navigator.busboy
+package app.busboy.navigator
 
 import io.flutter.embedding.android.FlutterActivity
 
