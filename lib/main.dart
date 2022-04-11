@@ -17,17 +17,17 @@ void main() async {
       appNameTitle: 'Busboy',
       blocProviders: [
         ...DefaultValues.blocProviders(
-          otpEndpoint: "https://otp.busboy.app/otp/routers/default",
-          otpGraphqlEndpoint: "https://cbba.trufi.dev/otp/index/graphql",
+          otpEndpoint: "https://api.busboy.app/otp",
+          otpGraphqlEndpoint: "https://api.busboy.app/otp/index/graphql",
           mapConfiguration: MapConfiguration(
             center: LatLng(5.82303, -73.03762),
           ),
           searchAssetPath: "assets/data/search.json",
-          photonUrl: "https://example/photonUrl",
+          photonUrl: "https://api.busboy.app/photon",
           mapTileProviders: [
             OSMMapLayer(
               mapTilesUrl:
-                  'https://otp.busboy.app/maps/osm-bright/{z}/{x}/{y}@2x.jpg',
+                  "https://api.busboy.app/static-maps/trufi-liberty/{z}/{x}/{y}@2x.jpg",
             )
           ],
         ),
@@ -43,12 +43,11 @@ void main() async {
               fit: BoxFit.cover,
             );
           },
-          urlFeedback:
-              'https://trufifeedback.z15.web.core.windows.net/route.html',
-          emailContact: 'feedback@trufi.app',
-          urlShareApp: 'https://example/share',
+          urlFeedback: 'https://busboy.app/feedback',
+          emailContact: 'leonardo.gutierrez@trufi-association.org',
+          urlShareApp: 'https://busboy.app/',
           urlSocialMedia: const UrlSocialMedia(
-            urlFacebook: 'https://www.facebook.com/trufiapp/',
+            urlFacebook: 'https://www.facebook.com/busboyaca',
           ),
           asyncExecutor: customAsyncExecutor,
         ),
