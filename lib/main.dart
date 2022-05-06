@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:navigator/custom_async_executor.dart';
 import 'package:trufi_core/base/blocs/map_configuration/map_configuration_cubit.dart';
 import 'package:trufi_core/base/blocs/map_tile_provider/map_tile_provider.dart';
+import 'package:trufi_core/base/utils/certificates_letsencrypt_android.dart';
 import 'package:trufi_core/base/utils/graphql_client/hive_init.dart';
 import 'package:trufi_core/base/widgets/drawer/menu/social_media_item.dart';
 import 'package:trufi_core/default_values.dart';
@@ -11,6 +12,7 @@ import 'package:latlong2/latlong.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await CertificatedLetsencryptAndroid.workAroundCertificated();
   await initHiveForFlutter();
   runApp(
     TrufiApp(
