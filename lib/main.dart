@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:navigator/custom_async_executor.dart';
 import 'package:trufi_core/base/blocs/map_configuration/map_configuration_cubit.dart';
 import 'package:trufi_core/base/blocs/map_tile_provider/map_tile_provider.dart';
+import 'package:trufi_core/base/models/trufi_latlng.dart';
 import 'package:trufi_core/base/utils/graphql_client/hive_init.dart';
 import 'package:trufi_core/base/widgets/drawer/menu/social_media_item.dart';
+import 'package:trufi_core/base/widgets/screen/lifecycle_reactor_notification.dart';
 import 'package:trufi_core/default_values.dart';
 import 'package:trufi_core/trufi_core.dart';
 import 'package:trufi_core/trufi_router.dart';
-import 'package:latlong2/latlong.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,12 +16,15 @@ void main() async {
   runApp(
     TrufiApp(
       appNameTitle: 'Busboy',
+      trufiLocalization: DefaultValues.trufiLocalization(
+        currentLocale: const Locale("es"),
+      ),
       blocProviders: [
         ...DefaultValues.blocProviders(
           otpEndpoint: "https://api.busboy.app/otp",
           otpGraphqlEndpoint: "https://api.busboy.app/otp/index/graphql",
           mapConfiguration: MapConfiguration(
-            center: LatLng(5.82303, -73.03762),
+            center: const TrufiLatLng(5.7157,-72.9315),
           ),
           searchAssetPath: "assets/data/search.json",
           photonUrl: "https://api.busboy.app/photon",
@@ -43,13 +47,21 @@ void main() async {
               fit: BoxFit.cover,
             );
           },
-          urlFeedback: 'https://busboy.app/feedback',
+          urlFeedback: 'https://api.busboy.app/feedback',
           emailContact: 'leonardo.gutierrez@trufi-association.org',
-          urlShareApp: 'https://busboy.app/',
+          urlShareApp: 'https://api.busboy.app/',
           urlSocialMedia: const UrlSocialMedia(
             urlFacebook: 'https://www.facebook.com/busboyaca',
           ),
           asyncExecutor: customAsyncExecutor,
+          shareBaseUri: Uri(
+            scheme: "https",
+            host: "api.busboy.app",
+          ),
+          lifecycleReactorHandler: LifecycleReactorNotifications(
+            url:
+                'https://api.busboy.app/static_files/notification.json',
+          ),
         ),
       ),
     ),
