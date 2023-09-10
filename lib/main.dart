@@ -3,7 +3,9 @@ import 'package:navigator/custom_async_executor.dart';
 import 'package:trufi_core/base/blocs/map_configuration/map_configuration_cubit.dart';
 import 'package:trufi_core/base/blocs/map_tile_provider/map_tile_provider.dart';
 import 'package:trufi_core/base/models/trufi_latlng.dart';
+import 'package:trufi_core/base/utils/certificates_letsencrypt_android.dart';
 import 'package:trufi_core/base/utils/graphql_client/hive_init.dart';
+import 'package:trufi_core/base/utils/trufi_app_id.dart';
 import 'package:trufi_core/base/widgets/drawer/menu/social_media_item.dart';
 import 'package:trufi_core/base/widgets/screen/lifecycle_reactor_notification.dart';
 import 'package:trufi_core/default_values.dart';
@@ -12,7 +14,9 @@ import 'package:trufi_core/trufi_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await CertificatedLetsencryptAndroid.workAroundCertificated();
   await initHiveForFlutter();
+  await TrufiAppId.initialize();
   runApp(
     TrufiApp(
       appNameTitle: 'Busboy',
@@ -24,7 +28,7 @@ void main() async {
           otpEndpoint: "https://api.busboy.app/otp",
           otpGraphqlEndpoint: "https://api.busboy.app/otp/index/graphql",
           mapConfiguration: MapConfiguration(
-            center: const TrufiLatLng(5.7157,-72.9315),
+            center: const TrufiLatLng(5.7157, -72.9315),
           ),
           searchAssetPath: "assets/data/search.json",
           photonUrl: "https://api.busboy.app/photon",
@@ -56,11 +60,10 @@ void main() async {
           asyncExecutor: customAsyncExecutor,
           shareBaseUri: Uri(
             scheme: "https",
-            host: "busboy.app",
+            host: "api.busboy.app",
           ),
           lifecycleReactorHandler: LifecycleReactorNotifications(
-            url:
-                'https://api.busboy.app/static_files/notification.json',
+            url: 'https://api.busboy.app/static_files/notification.json',
           ),
         ),
       ),
