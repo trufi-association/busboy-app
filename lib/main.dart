@@ -60,7 +60,7 @@ void main() async {
           asyncExecutor: customAsyncExecutor,
           shareBaseUri: Uri(
             scheme: "https",
-            host: "busboy.app",
+            host: "api.busboy.app",
           ),
           lifecycleReactorHandler: LifecycleReactorNotifications(
             url: 'https://api.busboy.app/static_files/notification.json',
