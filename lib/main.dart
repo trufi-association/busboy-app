@@ -32,6 +32,9 @@ void main() async {
           ),
           searchAssetPath: "assets/data/search.json",
           photonUrl: "https://api.busboy.app/photon",
+          querySearchParameters: {
+            "bbox": "-73.0598590695,5.6842529457,-72.8949756348,5.8510663143",
+          },
           mapTileProviders: [
             OSMMapLayer(
               mapTilesUrl:
